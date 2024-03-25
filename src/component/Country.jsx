@@ -11,7 +11,7 @@ export default function Country() {
       if(!input){        
         setCountries(data);
       }else{
-       let filteredData = data.filter((countri)=> (countri.name.common).includes(input)
+       let filteredData = data.filter((countri)=> (countri.name.common).toLowerCase().includes(input.toLowerCase())
         );        
         setCountries(filteredData);
       }
@@ -23,7 +23,7 @@ export default function Country() {
 
   useEffect(() => {
     callApi();
-  }, [input]);  
+  }, [input]);
 
   const imageStyle={
     height:"100px",
